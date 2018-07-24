@@ -1,7 +1,7 @@
 # CodePath Project
 import heapq
 import random
-from CodePathProject import getWords
+import getWords
 
 
 WORDS = getWords.getWords()
