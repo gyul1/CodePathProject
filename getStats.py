@@ -12,13 +12,11 @@ def getTotalNumberOfWords():
 def getTotalUniqueWords():
     return len(set(WORDS))
 
-
 def get20MostFrequentWords():
     frequency_dict = dict()
     for word in WORDS:
         if word.lower() in frequency_dict:
             frequency_dict[word.lower()] += 1
-
         else:
             frequency_dict[word.lower()] = 1
 
@@ -30,28 +28,21 @@ def get20MostFrequentWords():
     return_list = []
     for i in range(20):
         return_list.append(heapq._heappop_max(frequency_list))
-
-
+        
     return return_list
 
-
-
 def get20MostInterestingFrequentWords():
-
     filter = open("most-common-EnglishWords-100.txt","r")
     filter_words = filter.readlines()
 
     for i in range(len(filter_words)):
         filter_words[i] = filter_words[i].strip("\n")
 
-
-
     frequency_dict = dict()
     for word in WORDS:
         if word.lower() not in filter_words:
             if word.lower() in frequency_dict:
                 frequency_dict[word.lower()] += 1
-
             else:
                 frequency_dict[word.lower()] = 1
 
@@ -64,7 +55,6 @@ def get20MostInterestingFrequentWords():
     for i in range(20):
         return_list.append(heapq._heappop_max(frequency_list))
 
-
     return return_list
 
 
@@ -74,7 +64,6 @@ def get20LeastFrequentWords():
     for word in WORDS:
         if word.lower() in frequency_dict:
             frequency_dict[word.lower()] += 1
-
         else:
             frequency_dict[word.lower()] = 1
 
@@ -150,17 +139,11 @@ def getChapterQuoteAppears(q):
 
     while index < len(WORDS):
         if WORDS[index] == "chapter":
-
             if index + 1 < len(WORDS):
-
                 index += 1
-
                 try:
                     num = int(WORDS[index])
-
-
                 except:
-
                     index += 1
 
         if WORDS[index] == quote[0]:
